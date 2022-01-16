@@ -1,6 +1,7 @@
 ## Current
 
 ### Features
+- [#5105](https://github.com/blockscout/blockscout/pull/5105) - Redesign token page
 
 ### Fixes
 
