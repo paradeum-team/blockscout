@@ -22,7 +22,7 @@ defmodule Indexer.Application do
     ]
 
     children =
-      if Application.get_env(:indexer, Indexer.Supervisor)[:enabled] do
+      if false and Application.get_env(:indexer, Indexer.Supervisor)[:enabled] do
         Enum.reverse([{Indexer.Supervisor, [%{memory_monitor: memory_monitor_name}]} | base_children])
       else
         base_children

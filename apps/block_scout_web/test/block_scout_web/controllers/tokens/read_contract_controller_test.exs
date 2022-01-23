@@ -1,4 +1,4 @@
-defmodule BlockScoutWeb.Tokens.ReadContractControllerTest do
+defmodule BlockScoutWeb.Tokens.ContractControllerTest do
   use BlockScoutWeb.ConnCase, async: false
 
   describe "GET index/3" do

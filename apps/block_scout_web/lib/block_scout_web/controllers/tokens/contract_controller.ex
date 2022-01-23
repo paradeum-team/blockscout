@@ -1,4 +1,4 @@
-defmodule BlockScoutWeb.Tokens.ReadContractController do
+defmodule BlockScoutWeb.Tokens.ContractController do
   use BlockScoutWeb, :controller
 
   alias BlockScoutWeb.AccessHelpers
