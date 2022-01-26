@@ -1,9 +1,9 @@
 SYSTEM = $(shell uname -s)
 HOST = host.docker.internal
-DOCKER_IMAGE = blockscout_prod
+DOCKER_IMAGE = quay.io/netwarps/blockscout
 BS_CONTAINER_NAME = blockscout
 PG_CONTAINER_NAME = postgres
-PG_CONTAINER_IMAGE = postgres:12.5
+PG_CONTAINER_IMAGE = postgres:12-alpine
 THIS_FILE = $(lastword $(MAKEFILE_LIST))
 
 ifeq ($(SYSTEM), Linux)
@@ -416,7 +416,7 @@ endif
 
 start: build postgres 
 	@echo "==> Starting blockscout"
-	@docker run --rm --name $(BS_CONTAINER_NAME) \
+	@docker run -d --name $(BS_CONTAINER_NAME) \
 					$(BLOCKSCOUT_CONTAINER_PARAMS) \
 					-p 4000:4000 \
 					$(DOCKER_IMAGE) /bin/sh -c "mix do ecto.create, ecto.migrate; mix phx.server"
