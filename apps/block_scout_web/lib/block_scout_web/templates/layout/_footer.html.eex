@@ -49,7 +49,7 @@
           <h3><%= gettext("Main Networks") %></h3>
           <ul>
             <%= for %{title: title, url: url} <- main_nets do %>
-              <li><a href="<%= url %>" rel="norefferer" class="footer-link"> <%= title %> </a></li>
+              <li><span href="<%= url %>" rel="norefferer" class="footer-link"> <%= title %> </span></li>
             <% end %>
           </ul>
         </div>
