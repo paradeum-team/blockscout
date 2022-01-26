@@ -369,7 +369,7 @@ ifdef API_RATE_LIMIT_WHITELISTED_IPS
 	BLOCKSCOUT_CONTAINER_PARAMS += -e 'API_RATE_LIMIT_WHITELISTED_IPS=$(API_RATE_LIMIT_WHITELISTED_IPS)'
 endif
 
-HAS_BLOCKSCOUT_IMAGE := $(shell docker images | grep -sw ${DOCKER_IMAGE})
+HAS_BLOCKSCOUT_IMAGE := $(shell docker images ${DOCKER_IMAGE})
 build: 
 	@echo "==> Checking for blockscout image $(DOCKER_IMAGE)"
 ifdef HAS_BLOCKSCOUT_IMAGE
