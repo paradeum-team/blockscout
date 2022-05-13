@@ -1,4 +1,9 @@
 #!/bin/bash
+BASE_DIR=$(cd `dirname $0` && pwd)
+cd $BASE_DIR
+
+grep 4000  /var/spool/cron/root || echo "*/5 * * * *  /usr/bin/netstat -lntp|grep 4000 || $BASE_DIR/run.sh" >> /var/spool/cron/root
+
 set -e
 docker rm -f blockscout
 export ETHEREUM_JSONRPC_VARIANT=geth
