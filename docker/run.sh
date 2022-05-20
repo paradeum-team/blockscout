@@ -13,6 +13,8 @@ export ETHEREUM_JSONRPC_HTTP_URL=http://172.35.0.239:8545
 export ETHEREUM_JSONRPC_WS_URL=ws://172.35.0.239:8546
 export DATABASE_URL=postgresql://root:123456@127.0.0.1:5432/blockscout
 
+export INDEXER_MEMORY_LIMIT=5Gb
+
 export NETWORK=SolarNetwork
 export SUBNETWORK="SolarNetwork 区域"
 export LOGO_TEXT="SolarChain-TestNetwork"
@@ -30,6 +32,7 @@ export DISABLE_WRITE_API=true
 export INDEXER_DISABLE_ADDRESS_COIN_BALANCE_FETCHER=true
 export INDEXER_DISABLE_INTERNAL_TRANSACTIONS_FETCHER=true
 
-DOCKER_IMAGE=quay.io/netwarps/blockscout:jyliu
-docker pull $DOCKER_IMAGE
+DOCKER_REPO := quay.io/netwarps
+APP_NAME := blockscout:jyliu
+docker pull $DOCKER_REPO/$APP_NAME
 make start -e DOCKER_IMAGE=$DOCKER_IMAGE
