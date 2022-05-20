@@ -27,6 +27,9 @@ export SHOW_TXS_CHART=true
 export DISABLE_READ_API=true
 export DISABLE_WRITE_API=true
 
+export INDEXER_DISABLE_ADDRESS_COIN_BALANCE_FETCHER=true
+export INDEXER_DISABLE_INTERNAL_TRANSACTIONS_FETCHER=true
+
 DOCKER_IMAGE=quay.io/netwarps/blockscout:jyliu
 docker pull $DOCKER_IMAGE
 make start -e DOCKER_IMAGE=$DOCKER_IMAGE
